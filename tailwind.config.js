@@ -5,6 +5,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors:{
+        primary: '#28B1B9',
+        neutral: '#777777',
+        highlight:'#33A3AA',
+        input: '#202020',
+        'label-mobile': '#A7AFB7',
+        'label-web': '#84818A',
+      },
       backgroundImage: {
         'login':"linear-gradient(to bottom, #33A3AA, #138188);"
       },
