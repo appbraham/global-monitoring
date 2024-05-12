@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   private fb = inject(FormBuilder);
 
   public registerForm!:FormGroup;
+  public errors: string[] = [];
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -28,9 +29,12 @@ export class RegisterComponent implements OnInit {
     if( this.registerForm?.invalid ) return;
 
     this.userService.registerUser(this.registerForm.value)
-      .subscribe( res => {
-        console.log("Registro exitoso");
-        console.log(res);
+      .subscribe( {
+        next: () => console.log('Registrado con exito'),
+        error: (err) => {
+          console.log('Error', err);
+          this.errors = err.error.errors;
+        },
       });
   }
 
