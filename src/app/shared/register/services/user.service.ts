@@ -11,7 +11,7 @@ export class UserService {
   private baseUrl: string = environment.baseUrl;
   private http: HttpClient = inject(HttpClient);
 
-  saveUser(user: User){
+  registerUser(user: User){
 
     const headers = new HttpHeaders()
       .set('email', user.email)

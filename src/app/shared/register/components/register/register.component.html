@@ -8,17 +8,17 @@
     <h2 class="text-3xl font-inter font-medium text-center text-[#333333] sm:text-[25px] sm:text-left">Registrarse</h2>
   </div>
 
-  <form class="flex flex-col gap-8 w-full h-full font-inter sm:h-auto sm:font-poppins lg:w-[457px] lg:px-8">
+  <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="flex flex-col gap-8 w-full h-full font-inter sm:h-auto sm:font-poppins lg:w-[457px] lg:px-8">
     <div class="flex flex-col gap-3">
       <label class="text-label-mobile sm:text-label-web" for="user">Email</label>
-      <input type="text" id="user"
+      <input type="text" formControlName="email" id="user"
       class="text-sm font-medium text-input border p-3 border-gray-300 rounded-xl hover:border-primary focus:outline-primary
            placeholder:text-neutral placeholder:font-normal" placeholder="Ingresa tu correo electrónico">
     </div>
 
     <div class="flex flex-col gap-3">
       <label class="text-label-mobile sm:text-label-web" for="password">Contraseña</label>
-      <input type="password" id="password" class="text-sm font-medium text-input border p-3 border-gray-300 rounded-xl hover:border-primary focus:outline-primary
+      <input type="password" formControlName="password" id="password" class="text-sm font-medium text-input border p-3 border-gray-300 rounded-xl hover:border-primary focus:outline-primary
                  placeholder:text-neutral placeholder:font-normal" placeholder="Ingresa tu contraseña">
     </div>
 
