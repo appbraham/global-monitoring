@@ -5,7 +5,7 @@
 
   <div class="w-full space-y-3 lg:w-[457px] lg:px-8">
     <span class="hidden font-inter font-semibold text-2xl text-input sm:block md:text-3xl lg:text-4xl">Portal de monitoreo</span>
-    <h2 class="text-3xl font-inter font-medium text-center text-[#333333] sm:text-[25px] sm:text-left">Iniciar sesión</h2>
+    <h2 class="text-3xl font-inter font-medium text-center text-[#333333] sm:text-[25px] sm:text-left">Registrarse</h2>
   </div>
 
   <form class="flex flex-col gap-8 w-full h-full font-inter sm:h-auto sm:font-poppins lg:w-[457px] lg:px-8">
@@ -23,19 +23,16 @@
     </div>
 
     <div class="h-full flex justify-between items-center">
-      <a href="#" class="hidden text-sm text-[#47464A] sm:block hover:text-primary">¿Olvidaste tu contraseña?</a>
+      <span [routerLink]="['/']" class="text-label-web underline underline-offset-2 hover:text-primary hover:cursor-pointer">Regresar</span>
       <button type="submit"
-      class=" text-white w-full mt-auto py-3 bg-primary rounded-[20px] sm:w-44 sm:rounded-2xl hover:bg-highlight">
-      <span class="sm:hidden">Ingresar</span>
-      <span class="hidden text-sm font-medium sm:block">Iniciar Sesión</span>
+        class=" text-white w-full mt-auto py-3 bg-primary rounded-[20px] sm:w-44 sm:rounded-2xl hover:bg-highlight">
+        Registrarse
       </button>
     </div>
 
     <p class="hidden text-xs text-label-web mt-2 sm:block">Protegido por reCAPTCHA y sujeto a la
       <a href="#" class="text-highlight hover:underline"> Política de Privacidad</a> y
-      <a href="#" class="text-highlight hover:underline">Condiciones.</a></p>
-    <p class="text-center text-[#47464A] sm:text-sm sm:mt-12">¿No tienes cuenta?
-      <span [routerLink]="['/register']" class="text-primary font-medium underline-offset-2 hover:underline hover:cursor-pointer">Regístrate</span>
+      <a href="#" class="text-highlight hover:underline">Condiciones.</a>
     </p>
   </form>
 
