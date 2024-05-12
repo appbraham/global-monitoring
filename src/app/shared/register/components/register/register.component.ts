@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   private userService = inject(UserService);
   private fb = inject(FormBuilder);
 
-  registerForm!:FormGroup;
+  public registerForm!:FormGroup;
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -32,7 +32,6 @@ export class RegisterComponent implements OnInit {
         console.log("Registro exitoso");
         console.log(res);
       });
-
   }
 
 }

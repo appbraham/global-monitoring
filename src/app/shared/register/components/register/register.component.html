@@ -22,12 +22,12 @@
                  placeholder:text-neutral placeholder:font-normal" placeholder="Ingresa tu contraseña">
     </div>
 
-    <div class="h-full flex justify-between items-center">
-      <span [routerLink]="['/']" class="text-label-web underline underline-offset-2 hover:text-primary hover:cursor-pointer">Regresar</span>
+    <div class="h-full flex flex-col gap-4 justify-end items-center sm:gap-10 sm:justify-end sm:flex-row-reverse">
       <button type="submit"
-        class=" text-white w-full mt-auto py-3 bg-primary rounded-[20px] sm:w-44 sm:rounded-2xl hover:bg-highlight">
-        Registrarse
+      class=" text-white w-full py-3 bg-primary rounded-[20px] sm:w-44 sm:rounded-2xl hover:bg-highlight">
+      Registrarse
       </button>
+      <span [routerLink]="['/']" class="py-3  text-label-web underline underline-offset-2 hover:text-primary hover:cursor-pointer">Regresar</span>
     </div>
 
     <p class="hidden text-xs text-label-web mt-2 sm:block">Protegido por reCAPTCHA y sujeto a la
