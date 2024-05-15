@@ -20,6 +20,9 @@ module.exports = {
         poppins: 'Poppins, sans-serif',
         inter: '"Inter Variable", sans-serif;',
         roboto: 'Roboto, sans-serif;'
+      },
+      boxShadow: {
+        'all-side': '0px 0px 8px .5px rgba(0, 0, 0, 0.3)',
       }
     },
   },
