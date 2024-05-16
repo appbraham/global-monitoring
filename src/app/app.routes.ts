@@ -13,4 +13,13 @@ export const routes: Routes = [
     path:'dashboard',
     loadComponent: () => import('./dashboard/pages/dashboard/dashboard.component').then( c => c.DashboardComponent),
   },
+  {
+    path:'not-found',
+    loadComponent: () => import('./shared/not-found/not-found.component').then( c => c.NotFoundComponent),
+  },
+  {
+    path:'**',
+    redirectTo: 'not-found',
+    pathMatch: 'full'
+  }
 ];

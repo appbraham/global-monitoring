@@ -23,6 +23,9 @@ module.exports = {
       },
       boxShadow: {
         'all-side': '0px 0px 8px .5px rgba(0, 0, 0, 0.3)',
+      },
+      screens:{
+        'xs': '460px'
       }
     },
   },
