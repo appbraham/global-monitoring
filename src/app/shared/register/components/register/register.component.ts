@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser(){
+
     if( this.registerForm?.invalid ) return;
 
     this.userService.registerUser(this.registerForm.value)
