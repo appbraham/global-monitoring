@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { SensorType, Severity } from '../../interfaces/sensor.interface';
+import { SensorIconComponent } from '../sensor-icon/sensor-icon.component';
 
 @Component({
   selector: 'app-sensor-card',
   standalone: true,
-  imports: [],
+  imports: [SensorIconComponent],
   templateUrl: './sensor-card.component.html',
   styles: ``
 })

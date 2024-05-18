@@ -30,7 +30,7 @@
 
     <!-- Sensors -->
     <div class="col-span-12 lg:col-span-11 lg:col-start-2">
-      <div class="grid grid-cols-1 justify-between gap-3 justify-items-stretch sm:gap-4 sm:grid-cols-2 lg:gap-x-8 lg:grid-cols-4 xl:gap-x-12">
+      <div class="grid grid-cols-1 justify-between gap-3 justify-items-stretch sm:gap-4 sm:grid-cols-2 lg:gap-x-8 lg:grid-cols-3 xl:gap-x-12 2xl:grid-cols-4">
         @for (sensor of sensors; track $index) {
           <app-sensor-card [name]="sensor.sensorType" [severity]="sensor.severity" [sensorType]="sensor.sensorType"/>
         }
