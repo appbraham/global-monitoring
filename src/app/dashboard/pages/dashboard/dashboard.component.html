@@ -11,29 +11,31 @@
       <app-user-menu class="ml-auto" username="Juan Rojas"/>
     </header>
 
-    <div class="col-span-12 lg:col-span-11 lg:col-start-2 ">
+    <div class="col-span-12 lg:col-span-11 lg:col-start-2">
       <div class="grid grid-cols-1 justify-between gap-3 justify-items-stretch xs:gap-4 xs:grid-cols-2 lg:gap-8 lg:grid-cols-4 xl:gap-12">
-        <app-alert-card [title]="'Lecturas OK'" [total]="392" [icon]="Icon.ok"/>
-        <app-alert-card [title]="'Alertas Medias'" [total]="120" [icon]="Icon.warning"/>
-        <app-alert-card [title]="'Alertas Rojas'" [total]="10" [icon]="Icon.danger"/>
-        <app-alert-card [title]="'Alertas Deshabilitadas'" [total]="2" [icon]="Icon.disabled"/>
+        <app-alert-card [title]="'Lecturas OK'" [total]="392" [icon]="alertIcon.ok"/>
+        <app-alert-card [title]="'Alertas Medias'" [total]="120" [icon]="alertIcon.warning"/>
+        <app-alert-card [title]="'Alertas Rojas'" [total]="10" [icon]="alertIcon.danger"/>
+        <app-alert-card [title]="'Alertas Deshabilitadas'" [total]="2" [icon]="alertIcon.disabled"/>
       </div>
-      <div class="">
-        <p>Table</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum facilis, quos cupiditate suscipit, eveniet accusantium architecto saepe eos praesentium animi voluptatibus atque itaque eligendi amet iure dolorum, aliquam voluptates qui.
-          Perspiciatis possimus nobis quae! Ad mollitia deleniti facilis. Aut qui tenetur eveniet dignissimos exercitationem aliquam nam modi molestiae, blanditiis dicta omnis quas, commodi, atque tempora incidunt ad cum laborum hic?
-          Quidem maiores, corrupti vitae doloremque incidunt enim voluptatibus nisi deleniti nam doloribus maxime cum accusamus rerum ratione nostrum reiciendis earum culpa. Libero aut accusantium harum consectetur, beatae iste suscipit inventore.
-          Laudantium commodi exercitationem officiis adipisci, perferendis ut consectetur atque iste facilis sed quasi totam natus illo veniam eligendi vel incidunt perspiciatis voluptatem. Incidunt doloribus exercitationem ullam aperiam id corporis aut!
-          Laborum sequi blanditiis suscipit cum dignissimos eius fugiat, repellat totam placeat ea enim rem quos repellendus qui tempora veniam at ratione autem ut ipsam odit nihil eligendi accusamus officiis. Sunt?</p>
-        </div>
-        <div>
-          <p>Sensors</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque necessitatibus quia dolorem assumenda autem eveniet maxime delectus ab omnis deleniti maiores laudantium nisi quis voluptatem porro sequi, sunt, in facilis.
-            Incidunt culpa possimus, necessitatibus officiis suscipit laudantium voluptas corporis in facere labore, distinctio velit amet nam nobis dolore tempora impedit voluptatem deserunt dolores at vel! Consequuntur ut ratione placeat eius!
-            Est eveniet, accusantium tempora laudantium quaerat explicabo, nemo cum voluptatem necessitatibus veniam quos alias ipsam! Recusandae doloribus consectetur, obcaecati quod maxime sunt, eius suscipit dolores, rerum quam labore cupiditate eum?
-            Modi minus corporis rem consequatur maiores. Rem accusantium quaerat nisi assumenda fugit voluptatum deleniti. Porro, vel qui eaque, repudiandae aspernatur inventore unde, sit incidunt voluptas vero deserunt id praesentium atque!
-            Eum, distinctio laudantium qui asperiores ipsa iure autem recusandae repudiandae, explicabo numquam optio excepturi possimus nostrum quae expedita vero officiis? Blanditiis numquam aspernatur quisquam voluptate sequi natus aut, non eveniet.</p>
-          </div>
-        </div>
-      </section>
-    </main>
+    </div>
+
+    <!-- Table -->
+    <div class="col-span-12 lg:col-span-11 lg:col-start-2">
+      <p>Table</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum facilis, quos cupiditate suscipit, eveniet accusantium architecto saepe eos praesentium animi voluptatibus atque itaque eligendi amet iure dolorum, aliquam voluptates qui.
+        Laborum sequi blanditiis suscipit cum dignissimos eius fugiat, repellat totam placeat ea enim rem quos repellendus qui tempora veniam at ratione autem ut ipsam odit nihil eligendi accusamus officiis. Sunt?
+      </p>
+    </div>
+
+    <!-- Sensors -->
+    <div class="col-span-12 lg:col-span-11 lg:col-start-2">
+      <div class="grid grid-cols-1 justify-between gap-3 justify-items-stretch sm:gap-4 sm:grid-cols-2 lg:gap-x-8 lg:grid-cols-4 xl:gap-x-12">
+        @for (sensor of sensors; track $index) {
+          <app-sensor-card [name]="sensor.sensorType" [severity]="sensor.severity" [sensorType]="sensor.sensorType"/>
+        }
+      </div>
+    </div>
+
+  </section>
+</main>

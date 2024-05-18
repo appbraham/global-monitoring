@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Icon } from '../../interfaces/icon.enum';
+import { AlertIcon } from '../../interfaces/alert-icon.enum';
 
 @Component({
   selector: 'app-alert-card',
@@ -17,9 +17,9 @@ export class AlertComponent {
   public total: number = 0;
 
   @Input({required: true})
-  public icon: Icon = Icon.disabled;
+  public icon: AlertIcon = AlertIcon.disabled;
 
-  public Icon = Icon;
+  public Icon = AlertIcon;
 
 
 }

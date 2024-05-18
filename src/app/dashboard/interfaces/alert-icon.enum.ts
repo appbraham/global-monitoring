@@ -1,4 +1,4 @@
-export enum Icon {
+export enum AlertIcon {
   ok,
   warning,
   danger,
