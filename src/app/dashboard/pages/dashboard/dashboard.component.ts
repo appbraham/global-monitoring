@@ -6,11 +6,12 @@ import { UserMenuComponent } from '../../components/user-menu/user-menu.componen
 import { SensorCardComponent } from '../../components/sensor-card/sensor-card.component';
 import { AlertIcon } from '../../interfaces/alert-icon.enum';
 import { Sensor, SensorType, Severity } from '../../interfaces/sensor.interface';
+import { PlantTableComponent } from '../../components/plant-table/plant-table.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [AlertComponent, SideMenuComponent, MenuBarComponent, UserMenuComponent, SensorCardComponent],
+  imports: [AlertComponent, SideMenuComponent, MenuBarComponent, UserMenuComponent, SensorCardComponent, PlantTableComponent],
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {
@@ -21,35 +22,35 @@ export class DashboardComponent {
   public sensors: Sensor[] = [
     {
       sensorType: SensorType.carbonMonoxide,
-      severity: { high: 100, medium: 30, low: 3 }
+      severity: { normal: 100, medium: 30, high: 3 }
     },
     {
       sensorType: SensorType.energy,
-      severity: { high: 120, medium: 20, low: 1 }
+      severity: { normal: 120, medium: 20, high: 1 }
     },
     {
       sensorType: SensorType.gas,
-      severity: { high: 130, medium: 16, low: 4 }
+      severity: { normal: 130, medium: 16, high: 4 }
     },
     {
       sensorType: SensorType.level,
-      severity: { high: 122, medium: 12, low: 2 }
+      severity: { normal: 122, medium: 12, high: 2 }
     },
     {
       sensorType: SensorType.pressure,
-      severity: { high: 115, medium:18, low: 5 }
+      severity: { normal: 115, medium:18, high: 5 }
     },
     {
       sensorType: SensorType.strain,
-      severity: { high: 118, medium: 17, low: 12 }
+      severity: { normal: 118, medium: 17, high: 12 }
     },
     {
       sensorType: SensorType.temperature,
-      severity: { high: 100, medium: 25, low: 10 }
+      severity: { normal: 100, medium: 25, high: 10 }
     },
     {
       sensorType: SensorType.wind,
-      severity: { high: 105, medium: 40, low: 3 }
+      severity: { normal: 105, medium: 40, high: 3 }
     },
   ]
 

@@ -16,7 +16,7 @@ export enum SensorType {
 }
 
 export interface Severity {
-  low: number;
+  normal: number;
   medium: number;
   high: number;
 }
