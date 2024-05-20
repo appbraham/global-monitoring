@@ -5,7 +5,7 @@ import { MenuBarComponent } from '../../components/menu-bar/menu-bar.component';
 import { UserMenuComponent } from '../../components/user-menu/user-menu.component';
 import { SensorCardComponent } from '../../components/sensor-card/sensor-card.component';
 import { AlertIcon } from '../../interfaces/alert-icon.enum';
-import { Sensor, SensorType, Severity } from '../../interfaces/sensor.interface';
+import { Sensor, SensorType } from '../../interfaces/sensor.interface';
 import { PlantTableComponent } from '../../components/plant-table/plant-table.component';
 
 @Component({

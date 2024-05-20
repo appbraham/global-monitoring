@@ -1,13 +1,13 @@
 <button (click)="op.toggle($event)">
   <i class="pi pi-ellipsis-v"></i>
 </button>
-<p-overlayPanel #op class="mx-0 px-0">
-  <ul class="space-y-0">
-    <li class="space-x-3 -mx-4 px-3 py-2 rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black">
+<p-overlayPanel #op styleClass="pop-panel">
+  <ul class="space-y-0 -m-4 ">
+    <li (click)="editPlant(op)" class="space-x-3 px-4 py-2 rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black">
       <i class="pi pi-file-edit"></i>
       <span>Editar</span>
     </li>
-    <li class="space-x-3 -mx-4 px-3 py-2 rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black">
+    <li (click)="deletePlant(op)" class="space-x-3 px-3 py-2 rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black">
       <i class="pi pi-trash"></i>
       <span>Eliminar</span>
     </li>
