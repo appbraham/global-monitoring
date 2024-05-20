@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { Plant } from '../../interfaces/plants.interface';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-plant-table',
   standalone: true,
-  imports: [TableModule],
+  imports: [TableModule, PopupComponent],
   templateUrl: './plant-table.component.html',
   styles: ``
 })
@@ -13,13 +14,8 @@ export class PlantTableComponent implements OnInit {
 
   public plants: Plant [] = [];
 
-    // constructor(private productService: ProductService) {}
-
     ngOnInit() {
       this.fillPlants();
-        // this.productService.getProductsMini().then((data) => {
-        //     this.products = data;
-        // });
     }
 
     fillPlants(){
