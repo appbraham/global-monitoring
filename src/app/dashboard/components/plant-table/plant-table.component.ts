@@ -2,11 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { Plant } from '../../interfaces/plants.interface';
 import { PopupComponent } from '../popup/popup.component';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
 
 @Component({
   selector: 'app-plant-table',
   standalone: true,
-  imports: [TableModule, PopupComponent],
+  imports: [TableModule, ButtonModule, InputTextModule, IconFieldModule, InputIconModule, PopupComponent],
   templateUrl: './plant-table.component.html',
   styles: ``
 })
@@ -17,6 +21,8 @@ export class PlantTableComponent implements OnInit {
     ngOnInit() {
       this.fillPlants();
     }
+
+
 
     fillPlants(){
       this.plants = [
