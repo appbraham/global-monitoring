@@ -1,11 +1,11 @@
 <div class="card">
-  <p-table [value]="plants" [tableStyle]="{ 'min-width': '50rem' }">
+  <p-table [value]="plants" [tableStyle]="{ 'min-width': '10rem' }">
 
     <ng-template pTemplate="caption">
 
       <div class="flex flex-col gap-4 sm:flex-row">
 
-        <div class="flex justify-between items-center sm:gap-4 md:gap-10">
+        <div class="flex flex-wrap justify-between items-center gap-2 sm:gap-4 md:gap-10">
           <span class="font-inter text-gray-600">Plantas</span>
           <button type="button" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white">+ Crear nueva planta</button>
         </div>
@@ -20,21 +20,44 @@
 
     <ng-template pTemplate="header">
         <tr>
-            <th class="text-gray-600">País</th>
-            <th class="text-gray-600">Nombre Planta</th>
-            <th class="text-gray-600">Lecturas</th>
-            <th class="text-gray-600">Alerta Media</th>
-            <th class="text-gray-600">Alerta Roja</th>
-            <th class="text-center">Acciones</th>
+            <th class="text-gray-600">País <span class="sm:hidden">/ Planta</span></th>
+            <th class="hidden text-gray-600 sm:block">Nombre Planta</th>
+            <th class="text-gray-600">
+              <span class="mx-auto text-center size-5 rounded-full bg-icon-check grid items-center shadow shadow-gray-800/30 sm:hidden">
+                <i class="pi pi-check text-xs text-check"></i>
+              </span>
+              <span class="hidden sm:block">Lecturas</span>
+            </th>
+            <th class="text-gray-600">
+              <span class="mx-auto text-center size-5 rounded-full bg-icon-warning grid items-center shadow shadow-gray-800/30 sm:hidden">
+                <i class="pi pi-info text-xs text-warning rotate-180"></i>
+              </span>
+              <span class="hidden sm:block">Alerta Media</span>
+            </th>
+            <th class="text-gray-600 text-center">
+              <span class="mx-auto text-center size-5 rounded-full bg-icon-danger grid items-center shadow shadow-gray-800/30 sm:hidden">
+                <i class="pi pi-exclamation-triangle text-xs text-danger"></i>
+              </span>
+              <span class="hidden sm:block">Alerta Roja</span>
+            </th>
+            <th class="text-center">
+              <i class="pi pi-pen-to-square sm:hidden"></i>
+              <span class="hidden sm:block">Acciones</span>
+            </th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-plant>
         <tr>
-            <td>{{ plant.country }}</td>
-            <td>{{ plant.plantName }}</td>
-            <td>{{ plant.normalAlert }}</td>
-            <td>{{ plant.mediumAlert }}</td>
-            <td>{{ plant.highAlert }}</td>
+            <td>
+              <div>
+                <span class="block">{{ plant.country }}</span>
+                <span class="sm:hidden">{{ plant.plantName }}</span>
+              </div>
+            </td>
+            <td class="hidden sm:block">{{ plant.plantName }}</td>
+            <td class="text-center">{{ plant.normalAlert }}</td>
+            <td class="text-center">{{ plant.mediumAlert }}</td>
+            <td class="text-center">{{ plant.highAlert }}</td>
             <td class="text-center">
               <app-popup [plantId]="0"/>
             </td>
