@@ -6,11 +6,12 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import { CreatePlantComponent } from '../create-plant/create-plant.component';
 
 @Component({
   selector: 'app-plant-table',
   standalone: true,
-  imports: [TableModule, ButtonModule, InputTextModule, IconFieldModule, InputIconModule, PopupComponent],
+  imports: [TableModule, ButtonModule, InputTextModule, IconFieldModule, InputIconModule, PopupComponent, CreatePlantComponent],
   templateUrl: './plant-table.component.html',
   styles: ``
 })

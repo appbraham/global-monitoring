@@ -1,0 +1,14 @@
+<button type="button" (click)="visible = true" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white">{{ title }}</button>
+
+<p-dialog header="Crear nueva planta" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+
+  <form [formGroup]="myForm" class="flex flex-col gap-10">
+    <input type="text" pInputText placeholder="Nombre de planta" class="rounded-xl">
+    <p-dropdown placeholder="País"/>
+
+    <div class="flex justify-end gap-4">
+      <p-button label="Cancelar" (click)="visible = false" [text]="true" severity="secondary"  styleClass="create-btn"/>
+      <p-button label="Crear" (click)="visible = false" styleClass="create-btn" />
+    </div>
+  </form>
+</p-dialog>

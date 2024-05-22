@@ -7,10 +7,11 @@
 
         <div class="flex flex-wrap justify-between items-center gap-2 sm:gap-4 md:gap-10">
           <span class="font-inter text-gray-600">Plantas</span>
-          <button type="button" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white">+ Crear nueva planta</button>
+          <app-create-plant title="+ Crear nueva planta" />
+          <!-- <button type="button" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white">+ Crear nueva planta</button> -->
         </div>
 
-        <p-iconField iconPosition="left" class="sm:ml-auto">
+        <p-iconField iconPosition="left" class="content-center sm:ml-auto">
             <p-inputIcon styleClass="pi pi-search" />
             <input type="text" placeholder="Buscar planta" class="w-full outline outline-1 rounded-lg px-3 pl-10 py-1.5 hover:outline-gray-600 focus:outline-2 focus:outline-primary placeholder:font-inter placeholder:font-light md:flex-auto"/>
         </p-iconField>

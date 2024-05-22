@@ -1,0 +1,30 @@
+:host ::ng-deep .p-dialog {
+  background-color: #f3f4f6;
+  border-radius: 20px;
+  margin: 0px 12px
+}
+:host ::ng-deep .p-dialog-title {
+  font-weight: 500;
+}
+:host ::ng-deep .p-dialog-header {
+  background-color: transparent;
+  padding: 40px 40px 0px 40px;
+}
+:host ::ng-deep .p-dialog-content {
+  overflow: visible;
+  background-color: transparent;
+  padding: 40px 40px 45px 40px;
+}
+:host ::ng-deep .p-dropdown {
+  width: 100%;
+  border-radius: 12px;
+}
+
+:host ::ng-deep .create-btn.p-button {
+  padding: 8px 20px;
+  border-radius: 12px;
+}
+:host ::ng-deep .create-btn.p-button .p-button-label {
+  font-size: 14px;
+  font-weight: 500;
+}
