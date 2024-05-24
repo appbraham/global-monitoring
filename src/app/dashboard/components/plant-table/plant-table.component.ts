@@ -23,8 +23,6 @@ export class PlantTableComponent implements OnInit {
       this.fillPlants();
     }
 
-
-
     fillPlants(){
       this.plants = [
         {

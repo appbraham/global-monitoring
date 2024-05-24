@@ -1,0 +1,49 @@
+<!-- <button type="button" (click)="visibleEditDialog = true" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white"> -->
+<span (click)="visibleEditDialog = true" class="font-inter text-sm text-gray-600 ">
+  <i class="pi pi-file-edit"></i>
+  <span>Editar</span>
+</span>
+
+<p-dialog header="Crear nueva planta" [modal]="true" [(visible)]="visibleEditDialog" [style]="{ 'width': '35rem' }">
+
+  <form [formGroup]="editPlantForm" (ngSubmit)="editUser()" class="flex flex-col gap-10">
+    <div>
+      <input type="text" pInputText formControlName="name" placeholder="Nombre de planta" class="w-full rounded-xl">
+      @if (isValidField("name")) {
+        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
+      }
+    </div>
+
+    <div>
+      <input type="text" pInputText formControlName="countryName" placeholder="País" class="w-full rounded-xl">
+      @if (isValidField("countryName")) {
+        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
+      }
+    </div>
+
+    <div>
+      <input type="text" pInputText formControlName="normalAlert" placeholder="Alerta normal" class="w-full rounded-xl">
+      @if (isValidField("normalAlert")) {
+        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
+      }
+    </div>
+    <div>
+      <input type="text" pInputText formControlName="mediumAlert" placeholder="Alerta media" class="w-full rounded-xl">
+      @if (isValidField("mediumAlert")) {
+        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
+      }
+    </div>
+    <div>
+      <input type="text" pInputText formControlName="highAlert" placeholder="Alerta alta" class="w-full rounded-xl">
+      @if (isValidField("highAlert")) {
+        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
+      }
+    </div>
+
+    <div class="flex justify-end gap-4">
+      <p-button label="Cancelar" (click)="visibleEditDialog = false" [text]="true" severity="secondary"  styleClass="create-btn"/>
+      <p-button label="Crear" type="submit" styleClass="create-btn" />
+    </div>
+
+  </form>
+</p-dialog>

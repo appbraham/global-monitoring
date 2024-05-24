@@ -8,7 +8,6 @@
         <div class="flex flex-wrap justify-between items-center gap-2 sm:gap-4 md:gap-10">
           <span class="font-inter text-gray-600">Plantas</span>
           <app-create-plant title="+ Crear nueva planta" />
-          <!-- <button type="button" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white">+ Crear nueva planta</button> -->
         </div>
 
         <p-iconField iconPosition="left" class="content-center sm:ml-auto">
@@ -60,7 +59,7 @@
             <td class="text-center">{{ plant.mediumAlert }}</td>
             <td class="text-center">{{ plant.highAlert }}</td>
             <td class="text-center">
-              <app-popup [plantId]="0"/>
+              <app-popup [plant]="plant"/>
             </td>
         </tr>
     </ng-template>

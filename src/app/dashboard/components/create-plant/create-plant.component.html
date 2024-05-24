@@ -1,14 +1,26 @@
-<button type="button" (click)="visible = true" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white">{{ title }}</button>
+<button type="button" (click)="visibleDialog = true" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white">{{ title }}</button>
 
-<p-dialog header="Crear nueva planta" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+<p-dialog header="Crear nueva planta" [modal]="true" [(visible)]="visibleDialog" [style]="{ 'width': '25rem' }">
 
-  <form [formGroup]="myForm" class="flex flex-col gap-10">
-    <input type="text" pInputText placeholder="Nombre de planta" class="rounded-xl">
-    <p-dropdown placeholder="País"/>
+  <form [formGroup]="plantForm" (ngSubmit)="saveUser()" class="flex flex-col gap-10">
+    <div>
+      <input type="text" pInputText formControlName="name" placeholder="Nombre de planta" class="w-full rounded-xl">
+      @if (isValidField("name")) {
+        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
+      }
+    </div>
+
+    <div>
+      <p-dropdown formControlName="countryName" placeholder="País"/>
+      @if (isValidField("countryName")) {
+        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*Debe de seleccionar un país</p>
+      }
+    </div>
 
     <div class="flex justify-end gap-4">
-      <p-button label="Cancelar" (click)="visible = false" [text]="true" severity="secondary"  styleClass="create-btn"/>
-      <p-button label="Crear" (click)="visible = false" styleClass="create-btn" />
+      <p-button label="Cancelar" (click)="visibleDialog = false" [text]="true" severity="secondary"  styleClass="create-btn"/>
+      <p-button label="Crear" type="submit" styleClass="create-btn" />
     </div>
+
   </form>
 </p-dialog>
