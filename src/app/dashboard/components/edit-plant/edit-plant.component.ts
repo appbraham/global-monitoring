@@ -17,8 +17,8 @@ export class EditPlantComponent {
   @Input({ required: true })
   plant!: Plant;
 
-  @Input({ required: true })
-  visibleEditDialog: boolean = false;
+  // @Input({ required: true })
+  // visibleEditDialog: boolean = false;
 
   private fb = inject(FormBuilder);
   private validatorService = inject(ValidatorService);
@@ -56,7 +56,7 @@ export class EditPlantComponent {
       return;
     }
 
-    this.visibleEditDialog = false;
+    // this.visibleEditDialog = false;
     //TODO: call service to create a new user
   }
 

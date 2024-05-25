@@ -2,14 +2,14 @@
   <i class="pi pi-ellipsis-v"></i>
 </button>
 <p-overlayPanel #op styleClass="pop-panel">
-  <ul class="space-y-0 -m-4 ">
-    <li class="space-x-3 px-4 py-2 rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black">
-    <!-- <li (click)="editPlant(op)" class="space-x-3 px-4 py-2 rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black"> -->
-      <!-- <i class="pi pi-file-edit"></i> -->
-      <app-edit-plant [plant]="plant" [visibleEditDialog]="visibleEditDialog" />
-      <!-- <span>Editar</span> -->
+  <ul class="space-y-0 -m-4">
+    <!-- <li class="space-x-3 px-4 py-2 rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black"> -->
+    <li (click)="showEditDialog(op)" class="space-x-3 px-4 py-2 text-left rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black">
+      <i class="pi pi-file-edit"></i>
+      <span>Editar</span>
+      <!-- <app-edit-plant [plant]="plant" [visibleEditDialog]="visibleEditDialog" /> -->
     </li>
-    <li (click)="deletePlant(op)" class="space-x-3 px-3 py-2 rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black">
+    <li (click)="deletePlant(op)" class="space-x-3 px-4 py-2 rounded-md hover:bg-blue-200 hover:cursor-pointer hover:text-black">
       <i class="pi pi-trash"></i>
       <span>Eliminar</span>
     </li>
