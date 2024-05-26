@@ -1,49 +1,81 @@
-<!-- <button type="button" (click)="visibleEditDialog = true" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white"> -->
-<!-- <span (click)="visibleEditDialog = true" class="font-inter text-sm text-gray-600 ">
-  <i class="pi pi-file-edit"></i>
-  <span>Editar</span>
-</span> -->
-
-<!-- <p-dialog header="Crear nueva planta" [modal]="true" [(visible)]="visibleEditDialog" [style]="{ 'width': '35rem' }"> -->
-
-  <form [formGroup]="editPlantForm" (ngSubmit)="editUser()" class="flex flex-col gap-10">
-    <div>
-      <input type="text" pInputText formControlName="name" placeholder="Nombre de planta" class="w-full rounded-xl">
-      @if (isValidField("name")) {
-        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
-      }
+<form [formGroup]="editPlantForm" (ngSubmit)="editUser()" class="flex flex-col gap-7 py-2">
+  <div>
+    <div class="relative">
+      <input type="text" required id="name" formControlName="name" class="peer w-full text-gray-900 font-medium rounded-xl px-3 py-2.5 bg-gray-50 border-2 border-gray-500 outline-none
+      hover:border-gray-800 focus:border-primary">
+      <label for="name" class="absolute text-gray-800 select-none left-3 top-1/2 -translate-y-1/2 transition-all
+          peer-focus:top-0 peer-focus:bg-white peer-focus:text-sm peer-focus:px-1
+          peer-valid:top-0 peer-valid:bg-white peer-valid:text-sm peer-valid:px-1">
+        Nombre de planta
+      </label>
     </div>
+    @if (isValidField("name")) {
+    <small class="font-poppins  text-red-600 mt-1 ml-1">*El nombre de la planta es requerido.</small>
+    }
+  </div>
 
-    <div>
-      <input type="text" pInputText formControlName="countryName" placeholder="País" class="w-full rounded-xl">
-      @if (isValidField("countryName")) {
-        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
-      }
+  <div>
+    <div class="relative">
+      <input type="text" required id="country" formControlName="countryName" class="peer w-full text-gray-900 font-medium rounded-xl px-3 py-2.5 bg-gray-50 border-2 border-gray-500 outline-none
+      hover:border-gray-800 focus:border-primary">
+      <label for="country" class="absolute text-gray-800 select-none left-3 top-1/2 -translate-y-1/2 transition-all
+          peer-focus:top-0 peer-focus:bg-white peer-focus:text-sm peer-focus:px-1 peer-focus:text-gray-500
+          peer-valid:top-0 peer-valid:bg-white peer-valid:text-sm peer-valid:px-1 peer-valid:text-gray-500">
+        País
+      </label>
     </div>
+    @if (isValidField("countryName")) {
+    <small class="font-poppins text-red-600 mt-1 ml-1">*El nombre del país es requerido.</small>
+    }
+  </div>
 
-    <div>
-      <input type="text" pInputText formControlName="normalAlert" placeholder="Alerta normal" class="w-full rounded-xl">
-      @if (isValidField("normalAlert")) {
-        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
-      }
+  <div>
+    <div class="relative">
+      <input type="text" required id="normal" formControlName="normalAlert" class="peer w-full text-gray-900 font-medium rounded-xl px-3 py-2.5 bg-gray-50 border-2 border-gray-500 outline-none
+      hover:border-gray-800 focus:border-primary">
+      <label for="normal" class="absolute text-gray-800 select-none left-3 top-1/2 -translate-y-1/2 transition-all
+          peer-focus:top-0 peer-focus:bg-white peer-focus:text-sm peer-focus:px-1 peer-focus:text-gray-500
+          peer-valid:top-0 peer-valid:bg-white peer-valid:text-sm peer-valid:px-1 peer-valid:text-gray-500">
+        Alerta Normal
+      </label>
     </div>
-    <div>
-      <input type="text" pInputText formControlName="mediumAlert" placeholder="Alerta media" class="w-full rounded-xl">
-      @if (isValidField("mediumAlert")) {
-        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
-      }
-    </div>
-    <div>
-      <input type="text" pInputText formControlName="highAlert" placeholder="Alerta alta" class="w-full rounded-xl">
-      @if (isValidField("highAlert")) {
-        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
-      }
-    </div>
+    @if (isValidField("normalAlert")) {
+    <small class="font-poppins text-red-600 mt-1 ml-1">*La alerta normal es requerida</small>
+    }
+  </div>
 
-    <div class="flex justify-end gap-4">
-      <p-button label="Cancelar" [text]="true" severity="secondary"  styleClass="create-btn"/>
-      <p-button label="Crear" type="submit" styleClass="create-btn" />
+  <div>
+    <div class="relative">
+      <input type="text" required id="medium" formControlName="mediumAlert" class="peer w-full text-gray-900 font-medium rounded-xl px-3 py-2.5 bg-gray-50 border-2 border-gray-500 outline-none
+      hover:border-gray-800 focus:border-primary">
+      <label for="medium" class="absolute text-gray-800 select-none left-3 top-1/2 -translate-y-1/2 transition-all
+          peer-focus:top-0 peer-focus:bg-white peer-focus:text-sm peer-focus:px-1 peer-focus:text-gray-500
+          peer-valid:top-0 peer-valid:bg-white peer-valid:text-sm peer-valid:px-1 peer-valid:text-gray-500">
+        Alerta Media
+      </label>
     </div>
+    @if (isValidField("mediumAlert")) {
+    <small class="font-poppins text-red-600 mt-1 ml-1">*La alerta media es requerida</small>
+    }
+  </div>
+  <div>
+    <div class="relative">
+      <input type="text" required id="high" formControlName="highAlert" class="peer w-full text-gray-900 font-medium rounded-xl px-3 py-2.5 bg-gray-50 border-2 border-gray-500 outline-none
+      hover:border-gray-800 focus:border-primary">
+      <label for="high" class="absolute text-gray-800 select-none left-3 top-1/2 -translate-y-1/2 transition-all
+          peer-focus:top-0 peer-focus:bg-white peer-focus:text-sm peer-focus:px-1 peer-focus:text-gray-500
+          peer-valid:top-0 peer-valid:bg-white peer-valid:text-sm peer-valid:px-1 peer-valid:text-gray-500">
+        Alerta Alta
+      </label>
+    </div>
+    @if (isValidField("highAlert")) {
+    <small class="font-poppins text-sm text-red-600 mt-1 ml-1">*La alerta alta es requerida</small>
+    }
+  </div>
 
-  </form>
-<!-- </p-dialog> -->
+  <div class="flex justify-end gap-4">
+    <p-button label="Cancelar" (onClick)="closeDialog()" [text]="true" severity="secondary" styleClass="create-btn" />
+    <p-button label="Crear" type="submit" styleClass="create-btn" />
+  </div>
+
+</form>

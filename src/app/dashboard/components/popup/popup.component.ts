@@ -11,6 +11,20 @@ import { Plant } from '../../interfaces/plants.interface';
   imports: [ButtonModule, DynamicDialogModule, OverlayPanelModule, EditPlantComponent],
   providers: [DialogService],
   templateUrl: './popup.component.html',
+  styles:[
+    `
+    :host ::ng-deep .p-dialog-header {
+      background-color: red;
+      border-radius: 20px;
+      margin: 0px 12px
+    }
+    :host ::ng-deep .p-dialog-content {
+      background-color: green;
+      border-radius: 20px;
+      margin: 0px 12px
+    }
+    `
+  ]
 })
 export class PopupComponent implements OnDestroy{
 
@@ -25,12 +39,16 @@ export class PopupComponent implements OnDestroy{
     op.hide();
 
     this.ref = this.dialogService.open( EditPlantComponent, {
-      header: 'Editar Planta'
-    })
+      data: this.plant,
+      header: 'Editar Planta',
+      width: '25rem',
+      modal: true,
+      closable: true,
+      focusOnShow: false,
+    });
+
+
   }
-
-
-
 
   public editPlant(op: OverlayPanel): void {
     // this.visible = true;
@@ -46,7 +64,9 @@ export class PopupComponent implements OnDestroy{
   }
 
   ngOnDestroy(): void {
-
+    if(this.ref) {
+      this.ref.close();
+    }
   }
 
 }

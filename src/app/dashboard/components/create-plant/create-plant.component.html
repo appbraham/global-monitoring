@@ -1,6 +1,6 @@
 <button type="button" (click)="visibleDialog = true" class="font-inter text-sm text-gray-600 rounded-lg px-3 py-2 outline outline-gray-400 outline-1 shadow shadow-black/40 hover:bg-primary hover:outline-none hover:text-white">{{ title }}</button>
 
-<p-dialog header="Crear nueva planta" [modal]="true" [(visible)]="visibleDialog" [style]="{ 'width': '25rem' }">
+<p-dialog header="Crear nueva planta" [modal]="true" [(visible)]="visibleDialog"  [focusOnShow]="false" [style]="{ 'width': '25rem' }">
 
   <form [formGroup]="plantForm" (ngSubmit)="saveUser()" class="flex flex-col gap-10">
     <div>
