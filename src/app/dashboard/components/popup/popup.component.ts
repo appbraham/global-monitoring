@@ -28,25 +28,28 @@ import { Plant } from '../../interfaces/plants.interface';
 })
 export class PopupComponent implements OnDestroy{
 
-  dialogService = inject(DialogService);
-  ref: DynamicDialogRef | undefined;
+  private dialogService = inject(DialogService);
+  private ref: DynamicDialogRef | undefined;
 
   @Input({ required: true })
   public plant!: Plant;
-
 
   showEditDialog(op: OverlayPanel){
     op.hide();
 
     this.ref = this.dialogService.open( EditPlantComponent, {
-      data: this.plant,
+      data: {plant: this.plant},
       header: 'Editar Planta',
       width: '25rem',
+      styleClass: 'mx-2',
       modal: true,
       closable: true,
       focusOnShow: false,
     });
 
+    // this.ref.onClose.subscribe( () => {
+    //   alert("Se esta cerrando la ventana");
+    // });
 
   }
 

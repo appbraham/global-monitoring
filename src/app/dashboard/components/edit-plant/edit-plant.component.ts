@@ -5,7 +5,7 @@ import { ValidatorService } from '../../services/validator.service';
 import { ButtonModule } from 'primeng/button';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { Plant } from '../../interfaces/plants.interface';
-import { DynamicDialogConfig } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'app-edit-plant',
@@ -13,11 +13,11 @@ import { DynamicDialogConfig } from 'primeng/dynamicdialog';
   imports: [ReactiveFormsModule, DialogModule, ButtonModule, FloatLabelModule],
   templateUrl: './edit-plant.component.html',
   styles: `
-    :host ::ng-deep .create-btn.p-button {
+    :host ::ng-deep .edit-btn.p-button {
       padding: 8px 20px;
       border-radius: 12px;
     }
-    :host ::ng-deep .create-btn.p-button .p-button-label {
+    :host ::ng-deep .edit-btn.p-button .p-button-label {
       font-size: 14px;
       font-weight: 500;
     }
@@ -26,15 +26,22 @@ import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 export class EditPlantComponent {
 
   private fb = inject(FormBuilder);
-  public config: DynamicDialogConfig = inject(DynamicDialogConfig);
+
+  private config: DynamicDialogConfig = inject(DynamicDialogConfig);
+  public ref: DynamicDialogRef = inject(DynamicDialogRef);
 
   private validatorService = inject(ValidatorService);
   public editPlantForm: FormGroup;
 
-  plant: Plant = this.config.data;
+  plant: Plant = this.config.data.plant;
+  // dialog:DialogService = this.config.data.dialog;
+  // ref:DynamicDialogRef = this.config.data.ref;
 
 
   constructor() {
+    console.log(this.plant);
+    // console.log(this.dialog);
+    // console.log(this.ref);
 
     this.editPlantForm = this.fb.group({
       name: [this.plant.plantName, [Validators.required]],
@@ -62,7 +69,9 @@ export class EditPlantComponent {
   }
 
   closeDialog(){
-
+    if(this.ref){
+      this.ref.close();
+    }
   }
 
 }
