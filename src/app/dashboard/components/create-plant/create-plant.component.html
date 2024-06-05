@@ -3,10 +3,19 @@
 <p-dialog header="Crear nueva planta" [modal]="true" [(visible)]="visibleDialog"  [focusOnShow]="false" [style]="{ 'width': '25rem' }">
 
   <form [formGroup]="plantForm" (ngSubmit)="saveUser()" class="flex flex-col gap-10">
+
     <div>
-      <input type="text" pInputText formControlName="name" placeholder="Nombre de planta" class="w-full rounded-xl">
+      <div class="relative">
+        <input type="text" required id="name" formControlName="name" class="peer w-full text-gray-900 font-medium rounded-xl px-3 py-2.5 bg-gray-50 border border-gray-400 outline-none
+        hover:border-gray-800 focus:border-primary focus:border-2">
+        <label for="name" class="absolute text-gray-800 select-none left-3 top-1/2 -translate-y-1/2 transition-all
+            peer-focus:top-0 peer-focus:bg-white peer-focus:text-sm peer-focus:px-1
+            peer-valid:top-0 peer-valid:bg-white peer-valid:text-sm peer-valid:px-1">
+          Nombre de planta
+        </label>
+      </div>
       @if (isValidField("name")) {
-        <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
+      <p class="font-poppins text-sm text-red-600 mt-1 ml-1">*El nombre de la planta es requerido</p>
       }
     </div>
 
